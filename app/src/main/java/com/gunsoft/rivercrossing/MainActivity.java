@@ -22,10 +22,12 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-    TextView txtPetani, txtAyam, txtKambing, txtAnjing, txtSayuran, txtPadi;
+    TextView txtPetani, txtAyam, txtKambing, txtAnjing, txtSayuran, txtPadi, txtStep;
     LinearLayout linearlayout, seberangKiri, perahuKiri, perahuKanan, seberangKanan, sisiPerahuSekarang;
 
     String letakPerahu = "kiri";
+
+    int step = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class MainActivity extends ActionBarActivity {
         Button btnCross = (Button) findViewById(R.id.btnCross);
         Button btnReset = (Button) findViewById(R.id.btnReset);
 
+        txtStep = (TextView) findViewById(R.id.txtStep);
+
         //Urutan Logika IF
         // IF pertama seberang Kiri
         // Kedua perahu kiri
@@ -59,10 +63,15 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
+                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtPetani.getParent()) == seberangKiri ||
                                 ((ViewGroup)txtPetani.getParent()) == seberangKanan) &&!checkPerahu())
                             return false;
-                        // finger touches the screen
+
+                        // add step
+                        txtStep.setText(++step + "");
+
+                        // start condition
                         if(((ViewGroup)txtPetani.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
                             ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
@@ -99,11 +108,18 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
+
+
+                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtAyam.getParent()) == seberangKiri
                             || ((ViewGroup)txtAyam.getParent()) == seberangKanan)
                             &&!checkPerahu())
                             return false;
-                        // finger touches the screen
+
+                        // add step
+                        txtStep.setText(++step + "");
+
+                        // start condition
                         if(((ViewGroup)txtAyam.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
                             if(((ViewGroup)txtPadi.getParent()) == perahuKiri)
@@ -160,11 +176,18 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
+
+                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtKambing.getParent()) == seberangKiri ||
                                 ((ViewGroup)txtKambing.getParent()) == seberangKanan)
                                         && !checkPerahu())
                             return false;
-                        // finger touches the screen
+
+
+                        // add step
+                        txtStep.setText(++step + "");
+
+                        // start condition
                         if(((ViewGroup)txtKambing.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
                             if(((ViewGroup)txtSayuran.getParent()) == perahuKiri)
@@ -211,11 +234,18 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
+
+                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtAnjing.getParent()) == seberangKiri
                                 || ((ViewGroup)txtAnjing.getParent()) == seberangKanan)
                                 && !checkPerahu())
                             return false;
-                        // finger touches the screen
+
+
+                        // add step
+                        txtStep.setText(++step + "");
+
+                        // start condition
                         if(((ViewGroup)txtAnjing.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
                             if(((ViewGroup)txtAyam.getParent()) == perahuKiri)
@@ -262,11 +292,17 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
+
+                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtSayuran.getParent()) == seberangKiri
                                 || ((ViewGroup)txtSayuran.getParent()) == seberangKanan)
                                 && !checkPerahu())
                             return false;
-                        // finger touches the screen
+
+                        // add step
+                        txtStep.setText(++step + "");
+
+                        // start condition
                         if(((ViewGroup)txtSayuran.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
                             if(((ViewGroup)txtKambing.getParent()) == perahuKiri)
@@ -313,11 +349,18 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
+
+                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtPadi.getParent()) == seberangKiri
                                 && ((ViewGroup)txtPadi.getParent()) == seberangKanan)
                                 || !checkPerahu())
                             return false;
-                        // finger touches the screen
+
+
+                        // add step
+                        txtStep.setText(++step + "");
+
+                        // start condition
                         if(((ViewGroup)txtPadi.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
                             if(((ViewGroup)txtAyam.getParent()) == perahuKiri)
@@ -368,6 +411,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 LinearLayout seberang;
                 int count;
+                // initialize current position
                 if(letakPerahu.equals("kiri"))
                 {
                     seberang = seberangKiri;
@@ -411,6 +455,7 @@ public class MainActivity extends ActionBarActivity {
                     Toast.makeText(getApplicationContext(), "Tidak bisa menyebrang tidak ada objek", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                // start to move
                 for(int i = 1; count > i; i++)
                 {
                     TextView t = (TextView) sisiPerahuSekarang.getChildAt(1);
@@ -491,6 +536,10 @@ public class MainActivity extends ActionBarActivity {
                 sisiPerahuSekarang = perahuKiri;
                 letakPerahu = "kiri";
 
+                // reset step
+                step = 0;
+                txtStep.setText("0");
+
                 dialog.dismiss();
             }
 
@@ -543,6 +592,10 @@ public class MainActivity extends ActionBarActivity {
 
                 sisiPerahuSekarang = perahuKiri;
                 letakPerahu = "kiri";
+
+                // reset step
+                step = 0;
+                txtStep.setText("0");
 
                 dialog.dismiss();
             }

@@ -28,7 +28,8 @@
 
             <TextView android:text="Petani" android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtPetani" />
+                android:id="@+id/txtPetani"
+                android:drawableLeft="@mipmap/ic_launcher" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,8 +83,8 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:id="@+id/linearPerahuKiri">
 
             <TextView
@@ -99,8 +100,8 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:id="@+id/linearPerahuKanan">
 
             <TextView
@@ -116,8 +117,7 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/linearSeberangKanan"
-            android:layout_marginRight="0dp">
+            android:id="@+id/linearSeberangKanan">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -153,6 +153,31 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step"
+                android:id="@+id/textView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/txtStep" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Score"
+                android:id="@+id/textView2"
+                android:layout_marginTop="50dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 step by Johan"
+                android:id="@+id/textView3" />
 
         </LinearLayout>
 

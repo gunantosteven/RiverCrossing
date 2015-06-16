@@ -19,6 +19,7 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="WARN" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -42,31 +43,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gunsoft/rivercrossing/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54103345">
-              <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+            <state vertical-scroll-proportion="-22.741936">
+              <caret line="597" column="37" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
               <folding>
-                <element signature="e#17503#17646#0" expanded="true" />
-                <element signature="e#17645#17646#0" expanded="true" />
-                <element signature="e#17686#20771#0" expanded="true" />
-                <element signature="e#20770#20771#0" expanded="true" />
+                <element signature="e#18759#21924#0" expanded="true" />
+                <element signature="e#21923#21924#0" expanded="true" />
                 <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#21293#22365#0" expanded="true" />
-                <element signature="e#22364#22365#0" expanded="true" />
-                <element signature="e#22410#22659#0" expanded="true" />
-                <element signature="e#22658#22659#0" expanded="true" />
-                <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#22982#24054#0" expanded="true" />
-                <element signature="e#24053#24054#0" expanded="true" />
+                <element signature="e#23658#23907#0" expanded="true" />
+                <element signature="e#23906#23907#0" expanded="true" />
+                <element signature="e#24230#25397#0" expanded="true" />
+                <element signature="e#25396#25397#0" expanded="true" />
+                <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -868,8 +864,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gunsoft/rivercrossing/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       </list>
     </option>
   </component>
@@ -1000,6 +996,7 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="16c8be5c" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_6_API_21" />
     <property name="FullScreen" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="331" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1165,8 +1162,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1180,7 +1177,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37198067" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14814815" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1210,7 +1207,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1220,19 +1217,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1258,19 +1250,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="23" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="23" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1296,19 +1283,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1342,19 +1324,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1388,19 +1365,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1434,19 +1406,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1480,19 +1447,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
             <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1537,6 +1499,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gunsoft/rivercrossing/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.741936">
+          <caret line="597" column="37" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
+          <folding>
+            <element signature="e#18759#21924#0" expanded="true" />
+            <element signature="e#21923#21924#0" expanded="true" />
+            <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#23658#23907#0" expanded="true" />
+            <element signature="e#23906#23907#0" expanded="true" />
+            <element signature="e#24230#25397#0" expanded="true" />
+            <element signature="e#25396#25397#0" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1551,28 +1530,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gunsoft/rivercrossing/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54103345">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding>
-            <element signature="e#17503#17646#0" expanded="true" />
-            <element signature="e#17645#17646#0" expanded="true" />
-            <element signature="e#17686#20771#0" expanded="true" />
-            <element signature="e#20770#20771#0" expanded="true" />
-            <element signature="method#checkPerahu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#reset#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#21293#22365#0" expanded="true" />
-            <element signature="e#22364#22365#0" expanded="true" />
-            <element signature="e#22410#22659#0" expanded="true" />
-            <element signature="e#22658#22659#0" expanded="true" />
-            <element signature="method#tryagain#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22982#24054#0" expanded="true" />
-            <element signature="e#24053#24054#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
   </component>
