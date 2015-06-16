@@ -84,13 +84,13 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:id="@+id/linearPerahu">
+            android:id="@+id/linearPerahuKiri">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Perahu Ada Di kiri"
-                android:id="@+id/txtPerahu"
+                android:text="Perahu kiri"
+                android:id="@+id/txtPerahuKiri"
                 android:layout_marginBottom="50dp" />
 
         </LinearLayout>
@@ -99,7 +99,25 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/linearSeberangKanan">
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/linearPerahuKanan">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perahu kanan"
+                android:id="@+id/txtPerahuKanan"
+                android:layout_marginBottom="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearSeberangKanan"
+            android:layout_marginRight="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,15 +128,35 @@
 
         </LinearLayout>
 
-        <Button
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cross"
-            android:id="@+id/btnCross"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="bottom" />
+            android:layout_height="match_parent"
+            android:id="@+id/linearButtom">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:id="@+id/btnReset"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cross"
+                android:id="@+id/btnCross"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom" />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
