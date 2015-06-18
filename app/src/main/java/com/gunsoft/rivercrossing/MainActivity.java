@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -32,6 +33,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); // << hide title bar
         setContentView(R.layout.activity_main);
 
         linearlayout = (LinearLayout) findViewById(R.id.linearlayout);
@@ -48,6 +50,9 @@ public class MainActivity extends ActionBarActivity {
         Button btnReset = (Button) findViewById(R.id.btnReset);
 
         txtStep = (TextView) findViewById(R.id.txtStep);
+
+        // hide perahu kanan
+        perahuKanan.setVisibility(View.INVISIBLE);
 
         //Urutan Logika IF
         // IF pertama seberang Kiri
@@ -450,15 +455,15 @@ public class MainActivity extends ActionBarActivity {
                     Toast.makeText(getApplicationContext(), "Petani perlu ada di kapal", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if(count == 1)
+                else if(count == 0)
                 {
                     Toast.makeText(getApplicationContext(), "Tidak bisa menyebrang tidak ada objek", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 // start to move
-                for(int i = 1; count > i; i++)
+                for(int i = 0; count > i; i++)
                 {
-                    TextView t = (TextView) sisiPerahuSekarang.getChildAt(1);
+                    TextView t = (TextView) sisiPerahuSekarang.getChildAt(0);
                     ((ViewGroup)t.getParent()).removeView(t);
                     if(letakPerahu.equals("kiri"))
                     {
@@ -475,15 +480,19 @@ public class MainActivity extends ActionBarActivity {
                 {
                     letakPerahu = "kanan";
                     sisiPerahuSekarang = perahuKanan;
+                    perahuKanan.setVisibility(View.VISIBLE);
+                    perahuKiri.setVisibility(View.INVISIBLE);
                 }
                 else
                 {
                     letakPerahu = "kiri";
                     sisiPerahuSekarang = perahuKiri;
+                    perahuKanan.setVisibility(View.INVISIBLE);
+                    perahuKiri.setVisibility(View.VISIBLE);
                 }
 
                 // check if win
-                if(seberangKiri.getChildCount() == 1)
+                if(seberangKiri.getChildCount() == 0)
                 {
                     tryagain();
                 }
@@ -497,7 +506,7 @@ public class MainActivity extends ActionBarActivity {
 
     public boolean checkPerahu()
     {
-        if(sisiPerahuSekarang.getChildCount() <= 3)
+        if(sisiPerahuSekarang.getChildCount() < 3)
         {
             return true;
         }
@@ -535,6 +544,11 @@ public class MainActivity extends ActionBarActivity {
 
                 sisiPerahuSekarang = perahuKiri;
                 letakPerahu = "kiri";
+
+                // hide perahu kanan
+                perahuKanan.setVisibility(View.INVISIBLE);
+                // show perahu kiri
+                perahuKiri.setVisibility(View.VISIBLE);
 
                 // reset step
                 step = 0;
@@ -592,6 +606,11 @@ public class MainActivity extends ActionBarActivity {
 
                 sisiPerahuSekarang = perahuKiri;
                 letakPerahu = "kiri";
+
+                // hide perahu kanan
+                perahuKanan.setVisibility(View.INVISIBLE);
+                // show perahu kiri
+                perahuKiri.setVisibility(View.VISIBLE);
 
                 // reset step
                 step = 0;
