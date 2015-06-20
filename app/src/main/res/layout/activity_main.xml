@@ -16,12 +16,50 @@
 
         <LinearLayout
             android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lineartext"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step"
+                android:id="@+id/textView"
+                android:textColor="#ffffffff"
+                android:layout_marginTop="100dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/txtStep"
+                android:textColor="#ffffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Score"
+                android:id="@+id/textView2"
+                android:textColor="#ffffffff"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 step by Johan"
+                android:id="@+id/textView3"
+                android:textColor="#ffffffff" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:id="@+id/linearSeberangKiri"
-            android:gravity="bottom"
-            android:layout_marginRight="0dp"
-            android:layout_marginLeft="70dp"
+            android:gravity="bottom|left"
             android:layout_marginTop="10dp">
 
             <TextView
@@ -107,64 +145,43 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:id="@+id/linearSeberangKanan"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:gravity="bottom">
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:gravity="bottom"
-            android:id="@+id/linearButtom">
+            android:id="@+id/linearButtom"
+            android:weightSum="1"
+            android:gravity="bottom">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reset"
+                android:text="reset"
                 android:id="@+id/btnReset"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_gravity="bottom" />
+                android:background="#ffff0800" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cross"
+                android:text="cross"
                 android:id="@+id/btnCross"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_gravity="bottom" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Step"
-                android:id="@+id/textView" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:id="@+id/txtStep" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="High Score"
-                android:id="@+id/textView2"
-                android:layout_marginTop="50dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10 step by Johan"
-                android:id="@+id/textView3" />
+                android:layout_marginBottom="20dp"
+                android:background="#ff0600ff"
+                android:layout_marginTop="20dp" />
 
         </LinearLayout>
 

@@ -357,8 +357,8 @@ public class MainActivity extends ActionBarActivity {
 
                         // jika kapal diisi oleh lebih dari 3 objek maka ditolak
                         if((((ViewGroup)txtPadi.getParent()) == seberangKiri
-                                && ((ViewGroup)txtPadi.getParent()) == seberangKanan)
-                                || !checkPerahu())
+                                || ((ViewGroup)txtPadi.getParent()) == seberangKanan)
+                                && !checkPerahu())
                             return false;
 
 
@@ -415,7 +415,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 LinearLayout seberang;
-                int count;
+                int count = sisiPerahuSekarang.getChildCount();
                 // initialize current position
                 if(letakPerahu.equals("kiri"))
                 {
@@ -427,6 +427,18 @@ public class MainActivity extends ActionBarActivity {
                     seberang = seberangKanan;
                     sisiPerahuSekarang = perahuKanan;
                 }
+
+                if(count == 0)
+                {
+                    Toast.makeText(getApplicationContext(), "Tidak bisa menyebrang tidak ada objek", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(((ViewGroup)txtPetani.getParent()) != sisiPerahuSekarang)
+                {
+                    Toast.makeText(getApplicationContext(), "Petani perlu ada di kapal", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
                 if(((ViewGroup)txtAyam.getParent()) == seberang &&
                         ((ViewGroup)txtPadi.getParent()) == seberang   )
@@ -449,17 +461,7 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-                count = sisiPerahuSekarang.getChildCount();
-                if(((ViewGroup)txtPetani.getParent()) != sisiPerahuSekarang)
-                {
-                    Toast.makeText(getApplicationContext(), "Petani perlu ada di kapal", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                else if(count == 0)
-                {
-                    Toast.makeText(getApplicationContext(), "Tidak bisa menyebrang tidak ada objek", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
                 // start to move
                 for(int i = 0; count > i; i++)
                 {
