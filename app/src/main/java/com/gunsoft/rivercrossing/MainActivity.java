@@ -21,6 +21,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -468,7 +471,7 @@ public class MainActivity extends ActionBarActivity {
                 // pindah perahu ke kanan
                 if(letakPerahu.equals("kiri"))
                 {
-                    TranslateAnimation animationboat = new TranslateAnimation(0, 300, 0, 0);
+                    TranslateAnimation animationboat = new TranslateAnimation(0, 320, 0, 0);
                     animationboat.setDuration(1000);
                     animationboat.setFillAfter(false);
 
@@ -476,7 +479,7 @@ public class MainActivity extends ActionBarActivity {
                     // move objects to right
                     for(int i = 0; count > i; i++)
                     {
-                        TranslateAnimation animationobjects = new TranslateAnimation(0, 15, 0, 0);
+                        TranslateAnimation animationobjects = new TranslateAnimation(0, 0, 0, 0);
                         animationobjects.setDuration(1000);
                         animationobjects.setFillAfter(true);
 
@@ -504,7 +507,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 else // pindah perahu ke kiri
                 {
-                    TranslateAnimation animationboat = new TranslateAnimation(0, -300, 0, 0);
+                    TranslateAnimation animationboat = new TranslateAnimation(0, -320, 0, 0);
                     animationboat.setDuration(1000);
                     animationboat.setFillAfter(false);
 
@@ -512,7 +515,7 @@ public class MainActivity extends ActionBarActivity {
                     // move objects to left
                     for(int i = 0; count > i; i++)
                     {
-                        TranslateAnimation animationobjects = new TranslateAnimation(0, -15, 0, 0);
+                        TranslateAnimation animationobjects = new TranslateAnimation(0, 0, 0, 0);
                         animationobjects.setDuration(1000);
                         animationobjects.setFillAfter(true);
 
@@ -554,8 +557,6 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
-
-
     }
 
     public boolean checkPerahu()
