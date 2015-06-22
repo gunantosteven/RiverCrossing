@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.Window;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -46,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
         // default perahu ada di kiri
         sisiPerahuSekarang = perahuKiri;
 
-        Button btnCross = (Button) findViewById(R.id.btnCross);
+        final Button btnCross = (Button) findViewById(R.id.btnCross);
         Button btnReset = (Button) findViewById(R.id.btnReset);
 
         txtStep = (TextView) findViewById(R.id.txtStep);
@@ -59,6 +60,8 @@ public class MainActivity extends ActionBarActivity {
         // Kedua perahu kiri
         // Ketiga perahu kanan
         // Keempat seberang kanan
+
+
 
         txtPetani = (TextView) findViewById(R.id.txtPetani);
         txtPetani.setOnTouchListener(new View.OnTouchListener() {
@@ -460,42 +463,91 @@ public class MainActivity extends ActionBarActivity {
                 }
 
 
+                btnCross.setEnabled(false);
 
-
-                // start to move
-                for(int i = 0; count > i; i++)
-                {
-                    TextView t = (TextView) sisiPerahuSekarang.getChildAt(0);
-                    ((ViewGroup)t.getParent()).removeView(t);
-                    if(letakPerahu.equals("kiri"))
-                    {
-                        perahuKanan.addView(t);
-                    }
-                    else
-                    {
-                        perahuKiri.addView(t);
-                    }
-                }
-
-                // pindah perahu;
+                // pindah perahu ke kanan
                 if(letakPerahu.equals("kiri"))
                 {
+                    TranslateAnimation animationboat = new TranslateAnimation(0, 300, 0, 0);
+                    animationboat.setDuration(1000);
+                    animationboat.setFillAfter(false);
+
+                    perahuKiri.startAnimation(animationboat);
+                    // move objects to right
+                    for(int i = 0; count > i; i++)
+                    {
+                        TranslateAnimation animationobjects = new TranslateAnimation(0, 15, 0, 0);
+                        animationobjects.setDuration(1000);
+                        animationobjects.setFillAfter(true);
+
+                        TextView t = (TextView) sisiPerahuSekarang.getChildAt(i);
+                        t.startAnimation(animationobjects);
+                    }
+
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            perahuKiri.setVisibility(View.INVISIBLE);
+                            perahuKanan.setVisibility(View.VISIBLE);
+                        }
+                    }, 1000);
+
+                    // remove object from left and add object to right
+                    for(int i = 0; count > i; i++)
+                    {
+                        TextView t = (TextView) sisiPerahuSekarang.getChildAt(0);
+                        ((ViewGroup)t.getParent()).removeView(t);
+                        perahuKanan.addView(t);
+                    }
+
                     letakPerahu = "kanan";
                     sisiPerahuSekarang = perahuKanan;
-                    perahuKanan.setVisibility(View.VISIBLE);
-                    perahuKiri.setVisibility(View.INVISIBLE);
                 }
-                else
+                else // pindah perahu ke kiri
                 {
+                    TranslateAnimation animationboat = new TranslateAnimation(0, -300, 0, 0);
+                    animationboat.setDuration(1000);
+                    animationboat.setFillAfter(false);
+
+                    perahuKanan.startAnimation(animationboat);
+                    // move objects to left
+                    for(int i = 0; count > i; i++)
+                    {
+                        TranslateAnimation animationobjects = new TranslateAnimation(0, -15, 0, 0);
+                        animationobjects.setDuration(1000);
+                        animationobjects.setFillAfter(true);
+
+                        TextView t = (TextView) sisiPerahuSekarang.getChildAt(i);
+                        t.startAnimation(animationobjects);
+                    }
+
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            perahuKanan.setVisibility(View.INVISIBLE);
+                            perahuKiri.setVisibility(View.VISIBLE);
+                        }
+                    }, 1000);
+
+                    // remove object from right and add object to left
+                    for(int i = 0; count > i; i++)
+                    {
+                        TextView t = (TextView) sisiPerahuSekarang.getChildAt(0);
+                        ((ViewGroup)t.getParent()).removeView(t);
+                        perahuKiri.addView(t);
+                    }
+
                     letakPerahu = "kiri";
                     sisiPerahuSekarang = perahuKiri;
-                    perahuKanan.setVisibility(View.INVISIBLE);
-                    perahuKiri.setVisibility(View.VISIBLE);
                 }
 
+
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        btnCross.setEnabled(true);
+                    }
+                }, 1000);
+
                 // check if win
-                if(seberangKiri.getChildCount() == 0)
-                {
+                if (seberangKiri.getChildCount() == 0) {
                     tryagain();
                 }
 
