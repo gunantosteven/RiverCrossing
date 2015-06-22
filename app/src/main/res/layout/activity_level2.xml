@@ -1,0 +1,194 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@drawable/background">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearlayout">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lineartext"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step"
+                android:id="@+id/textView"
+                android:textColor="#ffffffff"
+                android:layout_marginTop="100dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/txtStep"
+                android:textColor="#ffffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Score"
+                android:id="@+id/textView2"
+                android:textColor="#ffffffff"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 step by Johan"
+                android:id="@+id/textView3"
+                android:textColor="#ffffffff" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linearSeberangKiri"
+            android:gravity="bottom|left"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPetani"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/petani" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/txtKucing"
+                android:layout_below="@+id/txtPetani"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/ayam"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/txtAnjing"
+                android:layout_below="@+id/txtKucing"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/anjing"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/txtKambing"
+                android:layout_below="@+id/txtAnjing"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/kambing"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/txtDaging"
+                android:layout_below="@+id/txtKambing"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/sayur"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/txtPadi"
+                android:layout_below="@+id/txtDaging"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/padi"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="80dp"
+            android:id="@+id/linearPerahuKiri"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/rakit"
+            android:layout_marginBottom="20dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/linearPerahuKanan"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rakit">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linearSeberangKanan"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linearButtom"
+            android:weightSum="1"
+            android:gravity="bottom">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset"
+                android:id="@+id/btnReset"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:background="#ffff0800"
+                android:textStyle="bold|normal" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cross"
+                android:id="@+id/btnCross"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="20dp"
+                android:background="#ff0600ff"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold|normal" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
