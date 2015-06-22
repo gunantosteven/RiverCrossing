@@ -135,7 +135,7 @@
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="30dp"
             android:id="@+id/linearPerahuKanan"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="20dp"

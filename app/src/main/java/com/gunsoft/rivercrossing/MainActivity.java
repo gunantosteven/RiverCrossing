@@ -74,13 +74,10 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
-                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
-                        if((((ViewGroup)txtPetani.getParent()) == seberangKiri ||
-                                ((ViewGroup)txtPetani.getParent()) == seberangKanan) &&!checkPerahu())
+                        ViewGroup parentPetani = (ViewGroup)txtPadi.getParent();
+                        //  check condition where boat where object in the same side
+                        if(!checkCondition(txtPetani))
                             return false;
-
-                        // add step
-                        txtStep.setText(++step + "");
 
                         // start condition
                         if(((ViewGroup)txtPetani.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
@@ -119,16 +116,10 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
-
-
-                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
-                        if((((ViewGroup)txtAyam.getParent()) == seberangKiri
-                            || ((ViewGroup)txtAyam.getParent()) == seberangKanan)
-                            &&!checkPerahu())
+                        // check condition where boat where object in the same side
+                        if(!checkCondition(txtAyam))
                             return false;
 
-                        // add step
-                        txtStep.setText(++step + "");
 
                         // start condition
                         if(((ViewGroup)txtAyam.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
@@ -187,16 +178,9 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
-
-                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
-                        if((((ViewGroup)txtKambing.getParent()) == seberangKiri ||
-                                ((ViewGroup)txtKambing.getParent()) == seberangKanan)
-                                        && !checkPerahu())
+                        // check condition where boat where object in the same side
+                        if(!checkCondition(txtKambing))
                             return false;
-
-
-                        // add step
-                        txtStep.setText(++step + "");
 
                         // start condition
                         if(((ViewGroup)txtKambing.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
@@ -245,16 +229,9 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
-
-                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
-                        if((((ViewGroup)txtAnjing.getParent()) == seberangKiri
-                                || ((ViewGroup)txtAnjing.getParent()) == seberangKanan)
-                                && !checkPerahu())
+                        // check condition where boat where object in the same side
+                        if(!checkCondition(txtAnjing))
                             return false;
-
-
-                        // add step
-                        txtStep.setText(++step + "");
 
                         // start condition
                         if(((ViewGroup)txtAnjing.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
@@ -303,15 +280,9 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
-
-                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
-                        if((((ViewGroup)txtSayuran.getParent()) == seberangKiri
-                                || ((ViewGroup)txtSayuran.getParent()) == seberangKanan)
-                                && !checkPerahu())
+                        // check condition where boat where object in the same side
+                        if(!checkCondition(txtSayuran))
                             return false;
-
-                        // add step
-                        txtStep.setText(++step + "");
 
                         // start condition
                         if(((ViewGroup)txtSayuran.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
@@ -360,16 +331,9 @@ public class MainActivity extends ActionBarActivity {
 
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
-
-                        // jika kapal diisi oleh lebih dari 3 objek maka ditolak
-                        if((((ViewGroup)txtPadi.getParent()) == seberangKiri
-                                || ((ViewGroup)txtPadi.getParent()) == seberangKanan)
-                                && !checkPerahu())
+                        // check condition where boat where object in the same side
+                        if(!checkCondition(txtPadi))
                             return false;
-
-
-                        // add step
-                        txtStep.setText(++step + "");
 
                         // start condition
                         if(((ViewGroup)txtPadi.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
@@ -423,44 +387,34 @@ public class MainActivity extends ActionBarActivity {
                 LinearLayout seberang;
                 int count = sisiPerahuSekarang.getChildCount();
                 // initialize current position
-                if(letakPerahu.equals("kiri"))
-                {
+                if (letakPerahu.equals("kiri")) {
                     seberang = seberangKiri;
                     sisiPerahuSekarang = perahuKiri;
-                }
-                else
-                {
+                } else {
                     seberang = seberangKanan;
                     sisiPerahuSekarang = perahuKanan;
                 }
 
-                if(count == 0)
-                {
+                if (count == 0) {
                     Toast.makeText(getApplicationContext(), "Tidak bisa menyebrang tidak ada objek", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else if(((ViewGroup)txtPetani.getParent()) != sisiPerahuSekarang)
-                {
+                } else if (((ViewGroup) txtPetani.getParent()) != sisiPerahuSekarang) {
                     Toast.makeText(getApplicationContext(), "Petani perlu ada di kapal", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
 
-                if(((ViewGroup)txtAyam.getParent()) == seberang &&
-                        ((ViewGroup)txtPadi.getParent()) == seberang   )
-                {
+                if (((ViewGroup) txtAyam.getParent()) == seberang &&
+                        ((ViewGroup) txtPadi.getParent()) == seberang) {
                     Toast.makeText(getApplicationContext(), "Ayam dan Padi tidak bisa bersama", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else if(((ViewGroup)txtAyam.getParent()) == seberang &&
-                        ((ViewGroup)txtAnjing.getParent()) == seberang   )
-                {
+                } else if (((ViewGroup) txtAyam.getParent()) == seberang &&
+                        ((ViewGroup) txtAnjing.getParent()) == seberang) {
                     Toast.makeText(getApplicationContext(), "Ayam dan Anjing tidak bisa bersama", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(((ViewGroup)txtKambing.getParent()) == seberang &&
-                        ((ViewGroup)txtSayuran.getParent()) == seberang   )
-                {
+                if (((ViewGroup) txtKambing.getParent()) == seberang &&
+                        ((ViewGroup) txtSayuran.getParent()) == seberang) {
                     Toast.makeText(getApplicationContext(), "Kambing dan Sayuran tidak bisa bersama", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -469,16 +423,14 @@ public class MainActivity extends ActionBarActivity {
                 btnCross.setEnabled(false);
 
                 // pindah perahu ke kanan
-                if(letakPerahu.equals("kiri"))
-                {
+                if (letakPerahu.equals("kiri")) {
                     TranslateAnimation animationboat = new TranslateAnimation(0, 320, 0, 0);
                     animationboat.setDuration(1000);
                     animationboat.setFillAfter(false);
 
                     perahuKiri.startAnimation(animationboat);
                     // move objects to right
-                    for(int i = 0; count > i; i++)
-                    {
+                    for (int i = 0; count > i; i++) {
                         TranslateAnimation animationobjects = new TranslateAnimation(0, 0, 0, 0);
                         animationobjects.setDuration(1000);
                         animationobjects.setFillAfter(true);
@@ -495,17 +447,15 @@ public class MainActivity extends ActionBarActivity {
                     }, 1000);
 
                     // remove object from left and add object to right
-                    for(int i = 0; count > i; i++)
-                    {
+                    for (int i = 0; count > i; i++) {
                         TextView t = (TextView) sisiPerahuSekarang.getChildAt(0);
-                        ((ViewGroup)t.getParent()).removeView(t);
+                        ((ViewGroup) t.getParent()).removeView(t);
                         perahuKanan.addView(t);
                     }
 
                     letakPerahu = "kanan";
                     sisiPerahuSekarang = perahuKanan;
-                }
-                else // pindah perahu ke kiri
+                } else // pindah perahu ke kiri
                 {
                     TranslateAnimation animationboat = new TranslateAnimation(0, -320, 0, 0);
                     animationboat.setDuration(1000);
@@ -513,8 +463,7 @@ public class MainActivity extends ActionBarActivity {
 
                     perahuKanan.startAnimation(animationboat);
                     // move objects to left
-                    for(int i = 0; count > i; i++)
-                    {
+                    for (int i = 0; count > i; i++) {
                         TranslateAnimation animationobjects = new TranslateAnimation(0, 0, 0, 0);
                         animationobjects.setDuration(1000);
                         animationobjects.setFillAfter(true);
@@ -531,10 +480,9 @@ public class MainActivity extends ActionBarActivity {
                     }, 1000);
 
                     // remove object from right and add object to left
-                    for(int i = 0; count > i; i++)
-                    {
+                    for (int i = 0; count > i; i++) {
                         TextView t = (TextView) sisiPerahuSekarang.getChildAt(0);
-                        ((ViewGroup)t.getParent()).removeView(t);
+                        ((ViewGroup) t.getParent()).removeView(t);
                         perahuKiri.addView(t);
                     }
 
@@ -557,6 +505,25 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+    }
+
+    public boolean checkCondition(TextView object)
+    {
+        ViewGroup parentObject = (ViewGroup)object.getParent();
+        if(((parentObject == seberangKiri || parentObject == perahuKiri) && sisiPerahuSekarang == perahuKiri) ||
+                ((parentObject == seberangKanan || parentObject == perahuKanan) && sisiPerahuSekarang == perahuKanan))
+        {
+            // jika kapal diisi oleh lebih dari 3 objek maka ditolak
+            if((((ViewGroup)object.getParent()) == seberangKiri
+                    || ((ViewGroup)object.getParent()) == seberangKanan)
+                    && !checkPerahu())
+                return false;
+
+            // if condition is right then add step
+            txtStep.setText(++step + "");
+        }
+
+        return true;
     }
 
     public boolean checkPerahu()
