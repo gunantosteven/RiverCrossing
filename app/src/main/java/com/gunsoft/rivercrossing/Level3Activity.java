@@ -399,7 +399,7 @@ public class Level3Activity extends ActionBarActivity {
 
                 // pindah perahu ke kanan
                 if (letakPerahu.equals("kiri")) {
-                    TranslateAnimation animationboat = new TranslateAnimation(0, 320, 0, 0);
+                    TranslateAnimation animationboat = new TranslateAnimation(0, 300, 0, 0);
                     animationboat.setDuration(1000);
                     animationboat.setFillAfter(false);
 
@@ -443,7 +443,7 @@ public class Level3Activity extends ActionBarActivity {
                     sisiPerahuSekarang = perahuKanan;
                 } else // pindah perahu ke kiri
                 {
-                    TranslateAnimation animationboat = new TranslateAnimation(0, -320, 0, 0);
+                    TranslateAnimation animationboat = new TranslateAnimation(0, -300, 0, 0);
                     animationboat.setDuration(1000);
                     animationboat.setFillAfter(false);
 
