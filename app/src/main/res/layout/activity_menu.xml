@@ -107,17 +107,17 @@
         android:id="@+id/imageView4"
         android:background="@drawable/daging"
         android:layout_alignBottom="@+id/imageView5"
-        android:layout_toLeftOf="@+id/btnLevel5"
-        android:layout_toStartOf="@+id/btnLevel5" />
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_toEndOf="@+id/imageView5" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView5"
         android:background="@drawable/kambing"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/btnLevel4"
-        android:layout_toStartOf="@+id/btnLevel4" />
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toRightOf="@+id/btnLevel3"
+        android:layout_toEndOf="@+id/btnLevel3" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -125,8 +125,8 @@
         android:id="@+id/imageView6"
         android:background="@drawable/kucing"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/imageView5"
-        android:layout_toEndOf="@+id/imageView5" />
+        android:layout_toRightOf="@+id/imageView4"
+        android:layout_toEndOf="@+id/imageView4" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -134,16 +134,24 @@
         android:id="@+id/imageView7"
         android:background="@drawable/padi"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/btnLevel5"
-        android:layout_alignStart="@+id/btnLevel5" />
+        android:layout_toRightOf="@+id/btnLevel6"
+        android:layout_toEndOf="@+id/btnLevel6" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView8"
-        android:layout_alignBottom="@+id/imageView5"
-        android:layout_toRightOf="@+id/imageView7"
-        android:layout_toEndOf="@+id/imageView7"
-        android:background="@drawable/sayur" />
+        android:background="@drawable/sayur"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignRight="@+id/btnLevel6"
+        android:layout_alignEnd="@+id/btnLevel6" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView9"
+        android:background="@drawable/logo"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
