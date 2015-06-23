@@ -60,7 +60,7 @@ public class Level1Activity extends ActionBarActivity {
 
 
 
-        txtPetani = (TextView) findViewById(R.id.txtPetani);
+        txtPetani = (TextView) findViewById(R.id.txtKucingBesar);
         txtPetani.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -101,7 +101,7 @@ public class Level1Activity extends ActionBarActivity {
             }
         });
 
-        txtKucing = (TextView) findViewById(R.id.txtKucing);
+        txtKucing = (TextView) findViewById(R.id.txtKucingSedang);
         txtKucing.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -154,7 +154,7 @@ public class Level1Activity extends ActionBarActivity {
         });
 
 
-        txtAnjing = (TextView) findViewById(R.id.txtAnjing);
+        txtAnjing = (TextView) findViewById(R.id.txtKucingKecil);
         txtAnjing.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -215,7 +215,7 @@ public class Level1Activity extends ActionBarActivity {
             }
         });
 
-        txtDaging = (TextView) findViewById(R.id.txtDaging);
+        txtDaging = (TextView) findViewById(R.id.txtAnjingSedang);
         txtDaging.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

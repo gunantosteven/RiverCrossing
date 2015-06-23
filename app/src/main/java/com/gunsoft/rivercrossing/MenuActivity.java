@@ -36,6 +36,15 @@ public class MenuActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
+        btnLevel3 = (Button) findViewById(R.id.btnLevel3);
+        btnLevel3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, Level3Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

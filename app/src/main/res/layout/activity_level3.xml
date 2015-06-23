@@ -3,8 +3,10 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Level1Activity"
-    android:background="@drawable/backgroundlv1">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".LevelActivity3"
+    android:background="@drawable/background">
+
+
 
     <LinearLayout
         android:orientation="horizontal"
@@ -54,7 +56,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="match_parent"
             android:id="@+id/linearSeberangKiri"
             android:gravity="bottom|left"
@@ -65,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtKucingBesar"
                 android:layout_alignParentBottom="true"
-                android:drawableLeft="@drawable/petani" />
+                android:drawableLeft="@drawable/kucingbesar" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,16 +75,23 @@
                 android:id="@+id/txtKucingSedang"
                 android:layout_below="@+id/txtKucingBesar"
                 android:layout_alignParentBottom="true"
-                android:drawableLeft="@drawable/kucing" />
+                android:drawableLeft="@drawable/kucingsedang"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:id="@+id/txtKucingKecil"
                 android:layout_below="@+id/txtKucingSedang"
                 android:layout_alignParentBottom="true"
-                android:drawableLeft="@drawable/anjing"/>
+                android:drawableLeft="@drawable/kucingkecil"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtAnjingBesar"
+                android:layout_below="@+id/txtKucingKecil"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/anjingbesar"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,17 +99,25 @@
                 android:id="@+id/txtAnjingSedang"
                 android:layout_below="@+id/txtAnjingBesar"
                 android:layout_alignParentBottom="true"
-                android:drawableLeft="@drawable/daging" />
+                android:drawableLeft="@drawable/anjingsedang"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtAnjingKecil"
+                android:layout_below="@+id/txtAnjingSedang"
+                android:layout_alignParentBottom="true"
+                android:drawableLeft="@drawable/anjingkecil"/>
 
         </LinearLayout>
 
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
             android:id="@+id/linearPerahuKiri"
             android:layout_marginTop="100dp"
             android:background="@drawable/rakit"
@@ -110,10 +127,10 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="10dp"
             android:id="@+id/linearPerahuKanan"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="20dp"
@@ -123,7 +140,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="match_parent"
             android:id="@+id/linearSeberangKanan"
             android:layout_marginTop="10dp"
@@ -169,4 +186,4 @@
 
     </LinearLayout>
 
-   </RelativeLayout>
+</RelativeLayout>

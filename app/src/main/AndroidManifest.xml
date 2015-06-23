@@ -27,6 +27,11 @@
             android:label="Level1Activity"
             android:screenOrientation="landscape">
         </activity>
+        <activity
+            android:name=".Level3Activity"
+            android:label="Level3Activity"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>

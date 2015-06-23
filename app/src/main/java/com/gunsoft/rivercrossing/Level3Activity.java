@@ -3,9 +3,9 @@ package com.gunsoft.rivercrossing;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,20 +19,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Level2Activity extends ActionBarActivity {
+public class Level3Activity extends ActionBarActivity {
 
-    TextView txtPetani, txtAyam, txtKambing, txtAnjing, txtSayuran, txtPadi, txtStep;
+    TextView txtAnjingBesar, txtAnjingSedang, txtAnjingKecil, txtKucingBesar, txtKucingSedang, txtKucingKecil, txtStep;
     LinearLayout linearlayout, seberangKiri, perahuKiri, perahuKanan, seberangKanan, sisiPerahuSekarang;
 
     String letakPerahu = "kiri";
 
     int step = 0;
 
+    int totalAnjingSeberangKiri = 3, totalAnjingSeberangKanan, totalKucingSeberangKiri = 3, totalKucingSeberangKanan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide(); // << hide title bar
-        setContentView(R.layout.activity_level2);
+        setContentView(R.layout.activity_level3);
 
         linearlayout = (LinearLayout) findViewById(R.id.linearlayout);
 
@@ -60,8 +62,8 @@ public class Level2Activity extends ActionBarActivity {
 
 
 
-        txtPetani = (TextView) findViewById(R.id.txtKucingBesar);
-        txtPetani.setOnTouchListener(new View.OnTouchListener() {
+        txtAnjingBesar = (TextView) findViewById(R.id.txtAnjingBesar);
+        txtAnjingBesar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int eventaction = event.getAction();
@@ -69,30 +71,29 @@ public class Level2Activity extends ActionBarActivity {
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
                         //  check condition where boat where object in the same side
-                        if(!checkCondition(txtPetani))
+                        if(!checkCondition(txtAnjingBesar))
                             return false;
 
                         // start condition
-                        if(((ViewGroup)txtPetani.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
+                        if(((ViewGroup)txtAnjingBesar.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
-                            ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
-                            perahuKiri.addView(txtPetani);
-
+                            ((ViewGroup)txtAnjingBesar.getParent()).removeView(txtAnjingBesar);
+                            perahuKiri.addView(txtAnjingBesar);
                         }
-                        else if(((ViewGroup)txtPetani.getParent()) == perahuKiri)
+                        else if(((ViewGroup)txtAnjingBesar.getParent()) == perahuKiri)
                         {
-                            ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
-                            seberangKiri.addView(txtPetani);
+                            ((ViewGroup)txtAnjingBesar.getParent()).removeView(txtAnjingBesar);
+                            seberangKiri.addView(txtAnjingBesar);
                         }
-                        else if(((ViewGroup)txtPetani.getParent()) == perahuKanan)
+                        else if(((ViewGroup)txtAnjingBesar.getParent()) == perahuKanan)
                         {
-                            ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
-                            seberangKanan.addView(txtPetani);
+                            ((ViewGroup)txtAnjingBesar.getParent()).removeView(txtAnjingBesar);
+                            seberangKanan.addView(txtAnjingBesar);
                         }
-                        else if(((ViewGroup)txtPetani.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
+                        else if(((ViewGroup)txtAnjingBesar.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
                         {
-                            ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
-                            perahuKanan.addView(txtPetani);
+                            ((ViewGroup)txtAnjingBesar.getParent()).removeView(txtAnjingBesar);
+                            perahuKanan.addView(txtAnjingBesar);
                         }
                         return true;
                 }
@@ -101,8 +102,8 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtAyam = (TextView) findViewById(R.id.txtKucingSedang);
-        txtAyam.setOnTouchListener(new View.OnTouchListener() {
+        txtAnjingSedang = (TextView) findViewById(R.id.txtAnjingSedang);
+        txtAnjingSedang.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int eventaction = event.getAction();
@@ -110,51 +111,31 @@ public class Level2Activity extends ActionBarActivity {
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
                         // check condition where boat where object in the same side
-                        if(!checkCondition(txtAyam))
+                        if(!checkCondition(txtAnjingSedang))
                             return false;
 
 
                         // start condition
-                        if(((ViewGroup)txtAyam.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
+                        if(((ViewGroup)txtAnjingSedang.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
-                            if(((ViewGroup)txtPadi.getParent()) == perahuKiri)
-                            {
-                                Toast.makeText(getApplicationContext(), "Ayam tidak bisa bersama dengan padi", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            else if(((ViewGroup)txtAnjing.getParent()) == perahuKiri)
-                            {
-                                Toast.makeText(getApplicationContext(), "Ayam tidak bisa bersama dengan anjing", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtAyam.getParent()).removeView(txtAyam);
-                            perahuKiri.addView(txtAyam);
+                            ((ViewGroup)txtAnjingSedang.getParent()).removeView(txtAnjingSedang);
+                            perahuKiri.addView(txtAnjingSedang);
 
                         }
-                        else if(((ViewGroup)txtAyam.getParent()) == perahuKiri)
+                        else if(((ViewGroup)txtAnjingSedang.getParent()) == perahuKiri)
                         {
-                            ((ViewGroup)txtAyam.getParent()).removeView(txtAyam);
-                            seberangKiri.addView(txtAyam);
+                            ((ViewGroup)txtAnjingSedang.getParent()).removeView(txtAnjingSedang);
+                            seberangKiri.addView(txtAnjingSedang);
                         }
-                        else if(((ViewGroup)txtAyam.getParent()) == perahuKanan)
+                        else if(((ViewGroup)txtAnjingSedang.getParent()) == perahuKanan)
                         {
-                            ((ViewGroup)txtAyam.getParent()).removeView(txtAyam);
-                            seberangKanan.addView(txtAyam);
+                            ((ViewGroup)txtAnjingSedang.getParent()).removeView(txtAnjingSedang);
+                            seberangKanan.addView(txtAnjingSedang);
                         }
-                        else if(((ViewGroup)txtAyam.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
+                        else if(((ViewGroup)txtAnjingSedang.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
                         {
-                            if(((ViewGroup)txtPadi.getParent()) == perahuKanan)
-                            {
-                                Toast.makeText(getApplicationContext(), "Ayam tidak bisa bersama dengan padi", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            else if(((ViewGroup)txtAnjing.getParent()) == perahuKanan)
-                            {
-                                Toast.makeText(getApplicationContext(), "Ayam tidak bisa bersama dengan anjing", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtAyam.getParent()).removeView(txtAyam);
-                            perahuKanan.addView(txtAyam);
+                            ((ViewGroup)txtAnjingSedang.getParent()).removeView(txtAnjingSedang);
+                            perahuKanan.addView(txtAnjingSedang);
                         }
                         return true;
                 }
@@ -163,8 +144,8 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtKambing = (TextView) findViewById(R.id.txtAnjingBesar);
-        txtKambing.setOnTouchListener(new View.OnTouchListener() {
+        txtAnjingKecil = (TextView) findViewById(R.id.txtAnjingKecil);
+        txtAnjingKecil.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int eventaction = event.getAction();
@@ -172,40 +153,30 @@ public class Level2Activity extends ActionBarActivity {
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
                         // check condition where boat where object in the same side
-                        if(!checkCondition(txtKambing))
+                        if(!checkCondition(txtAnjingKecil))
                             return false;
 
                         // start condition
-                        if(((ViewGroup)txtKambing.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
+                        if(((ViewGroup)txtAnjingKecil.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
-                            if(((ViewGroup)txtSayuran.getParent()) == perahuKiri)
-                            {
-                                Toast.makeText(getApplicationContext(), "Kambing tidak bisa bersama dengan sayuran", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtKambing.getParent()).removeView(txtKambing);
-                            perahuKiri.addView(txtKambing);
+                            ((ViewGroup)txtAnjingKecil.getParent()).removeView(txtAnjingKecil);
+                            perahuKiri.addView(txtAnjingKecil);
 
                         }
-                        else if(((ViewGroup)txtKambing.getParent()) == perahuKiri)
+                        else if(((ViewGroup)txtAnjingKecil.getParent()) == perahuKiri)
                         {
-                            ((ViewGroup)txtKambing.getParent()).removeView(txtKambing);
-                            seberangKiri.addView(txtKambing);
+                            ((ViewGroup)txtAnjingKecil.getParent()).removeView(txtAnjingKecil);
+                            seberangKiri.addView(txtAnjingKecil);
                         }
-                        else if(((ViewGroup)txtKambing.getParent()) == perahuKanan)
+                        else if(((ViewGroup)txtAnjingKecil.getParent()) == perahuKanan)
                         {
-                            ((ViewGroup)txtKambing.getParent()).removeView(txtKambing);
-                            seberangKanan.addView(txtKambing);
+                            ((ViewGroup)txtAnjingKecil.getParent()).removeView(txtAnjingKecil);
+                            seberangKanan.addView(txtAnjingKecil);
                         }
-                        else if(((ViewGroup)txtKambing.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
+                        else if(((ViewGroup)txtAnjingKecil.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
                         {
-                            if(((ViewGroup)txtSayuran.getParent()) == perahuKanan)
-                            {
-                                Toast.makeText(getApplicationContext(), "Kambing tidak bisa bersama dengan sayuran", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtKambing.getParent()).removeView(txtKambing);
-                            perahuKanan.addView(txtKambing);
+                            ((ViewGroup)txtAnjingKecil.getParent()).removeView(txtAnjingKecil);
+                            perahuKanan.addView(txtAnjingKecil);
                         }
                         return true;
                 }
@@ -214,8 +185,8 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtAnjing = (TextView) findViewById(R.id.txtKucingKecil);
-        txtAnjing.setOnTouchListener(new View.OnTouchListener() {
+        txtKucingBesar = (TextView) findViewById(R.id.txtKucingBesar);
+        txtKucingBesar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int eventaction = event.getAction();
@@ -223,40 +194,30 @@ public class Level2Activity extends ActionBarActivity {
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
                         // check condition where boat where object in the same side
-                        if(!checkCondition(txtAnjing))
+                        if(!checkCondition(txtKucingBesar))
                             return false;
 
                         // start condition
-                        if(((ViewGroup)txtAnjing.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
+                        if(((ViewGroup)txtKucingBesar.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
-                            if(((ViewGroup)txtAyam.getParent()) == perahuKiri)
-                            {
-                                Toast.makeText(getApplicationContext(), "Anjing tidak bisa bersama dengan ayam", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtAnjing.getParent()).removeView(txtAnjing);
-                            perahuKiri.addView(txtAnjing);
+                            ((ViewGroup)txtKucingBesar.getParent()).removeView(txtKucingBesar);
+                            perahuKiri.addView(txtKucingBesar);
 
                         }
-                        else if(((ViewGroup)txtAnjing.getParent()) == perahuKiri)
+                        else if(((ViewGroup)txtKucingBesar.getParent()) == perahuKiri)
                         {
-                            ((ViewGroup)txtAnjing.getParent()).removeView(txtAnjing);
-                            seberangKiri.addView(txtAnjing);
+                            ((ViewGroup)txtKucingBesar.getParent()).removeView(txtKucingBesar);
+                            seberangKiri.addView(txtKucingBesar);
                         }
-                        else if(((ViewGroup)txtAnjing.getParent()) == perahuKanan)
+                        else if(((ViewGroup)txtKucingBesar.getParent()) == perahuKanan)
                         {
-                            ((ViewGroup)txtAnjing.getParent()).removeView(txtAnjing);
-                            seberangKanan.addView(txtAnjing);
+                            ((ViewGroup)txtKucingBesar.getParent()).removeView(txtKucingBesar);
+                            seberangKanan.addView(txtKucingBesar);
                         }
-                        else if(((ViewGroup)txtAnjing.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
+                        else if(((ViewGroup)txtKucingBesar.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
                         {
-                            if(((ViewGroup)txtAyam.getParent()) == perahuKanan)
-                            {
-                                Toast.makeText(getApplicationContext(), "Anjing tidak bisa bersama dengan ayam", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtAnjing.getParent()).removeView(txtAnjing);
-                            perahuKanan.addView(txtAnjing);
+                            ((ViewGroup)txtKucingBesar.getParent()).removeView(txtKucingBesar);
+                            perahuKanan.addView(txtKucingBesar);
                         }
                         return true;
                 }
@@ -265,8 +226,8 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtSayuran = (TextView) findViewById(R.id.txtAnjingSedang);
-        txtSayuran.setOnTouchListener(new View.OnTouchListener() {
+        txtKucingSedang = (TextView) findViewById(R.id.txtKucingSedang);
+        txtKucingSedang.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int eventaction = event.getAction();
@@ -274,40 +235,30 @@ public class Level2Activity extends ActionBarActivity {
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
                         // check condition where boat where object in the same side
-                        if(!checkCondition(txtSayuran))
+                        if(!checkCondition(txtKucingSedang))
                             return false;
 
                         // start condition
-                        if(((ViewGroup)txtSayuran.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
+                        if(((ViewGroup)txtKucingSedang.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
-                            if(((ViewGroup)txtKambing.getParent()) == perahuKiri)
-                            {
-                                Toast.makeText(getApplicationContext(), "Sayuran tidak bisa bersama dengan kambing", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtSayuran.getParent()).removeView(txtSayuran);
-                            perahuKiri.addView(txtSayuran);
+                            ((ViewGroup)txtKucingSedang.getParent()).removeView(txtKucingSedang);
+                            perahuKiri.addView(txtKucingSedang);
 
                         }
-                        else if(((ViewGroup)txtSayuran.getParent()) == perahuKiri)
+                        else if(((ViewGroup)txtKucingSedang.getParent()) == perahuKiri)
                         {
-                            ((ViewGroup)txtSayuran.getParent()).removeView(txtSayuran);
-                            seberangKiri.addView(txtSayuran);
+                            ((ViewGroup)txtKucingSedang.getParent()).removeView(txtKucingSedang);
+                            seberangKiri.addView(txtKucingSedang);
                         }
-                        else if(((ViewGroup)txtSayuran.getParent()) == perahuKanan)
+                        else if(((ViewGroup)txtKucingSedang.getParent()) == perahuKanan)
                         {
-                            ((ViewGroup)txtSayuran.getParent()).removeView(txtSayuran);
-                            seberangKanan.addView(txtSayuran);
+                            ((ViewGroup)txtKucingSedang.getParent()).removeView(txtKucingSedang);
+                            seberangKanan.addView(txtKucingSedang);
                         }
-                        else if(((ViewGroup)txtSayuran.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
+                        else if(((ViewGroup)txtKucingSedang.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
                         {
-                            if(((ViewGroup)txtKambing.getParent()) == perahuKanan)
-                            {
-                                Toast.makeText(getApplicationContext(), "Sayuran tidak bisa bersama dengan kambing", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtSayuran.getParent()).removeView(txtSayuran);
-                            perahuKanan.addView(txtSayuran);
+                            ((ViewGroup)txtKucingSedang.getParent()).removeView(txtKucingSedang);
+                            perahuKanan.addView(txtKucingSedang);
                         }
                         return true;
                 }
@@ -316,8 +267,8 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtPadi = (TextView) findViewById(R.id.txtPadi);
-        txtPadi.setOnTouchListener(new View.OnTouchListener() {
+        txtKucingKecil = (TextView) findViewById(R.id.txtKucingKecil);
+        txtKucingKecil.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int eventaction = event.getAction();
@@ -325,40 +276,31 @@ public class Level2Activity extends ActionBarActivity {
                 switch (eventaction) {
                     case MotionEvent.ACTION_DOWN:
                         // check condition where boat where object in the same side
-                        if(!checkCondition(txtPadi))
+                        if(!checkCondition(txtKucingKecil))
                             return false;
 
                         // start condition
-                        if(((ViewGroup)txtPadi.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
+                        if(((ViewGroup)txtKucingKecil.getParent()) == seberangKiri && letakPerahu.equals("kiri"))
                         {
-                            if(((ViewGroup)txtAyam.getParent()) == perahuKiri)
-                            {
-                                Toast.makeText(getApplicationContext(), "Padi tidak bisa bersama dengan ayam", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtPadi.getParent()).removeView(txtPadi);
-                            perahuKiri.addView(txtPadi);
+
+                            ((ViewGroup)txtKucingKecil.getParent()).removeView(txtKucingKecil);
+                            perahuKiri.addView(txtKucingKecil);
 
                         }
-                        else if(((ViewGroup)txtPadi.getParent()) == perahuKiri)
+                        else if(((ViewGroup)txtKucingKecil.getParent()) == perahuKiri)
                         {
-                            ((ViewGroup)txtPadi.getParent()).removeView(txtPadi);
-                            seberangKiri.addView(txtPadi);
+                            ((ViewGroup)txtKucingKecil.getParent()).removeView(txtKucingKecil);
+                            seberangKiri.addView(txtKucingKecil);
                         }
-                        else if(((ViewGroup)txtPadi.getParent()) == perahuKanan)
+                        else if(((ViewGroup)txtKucingKecil.getParent()) == perahuKanan)
                         {
-                            ((ViewGroup)txtPadi.getParent()).removeView(txtPadi);
-                            seberangKanan.addView(txtPadi);
+                            ((ViewGroup)txtKucingKecil.getParent()).removeView(txtKucingKecil);
+                            seberangKanan.addView(txtKucingKecil);
                         }
-                        else if(((ViewGroup)txtPadi.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
+                        else if(((ViewGroup)txtKucingKecil.getParent()) == seberangKanan && letakPerahu.equals("kanan"))
                         {
-                            if(((ViewGroup)txtAyam.getParent()) == perahuKanan)
-                            {
-                                Toast.makeText(getApplicationContext(), "Padi tidak bisa bersama dengan ayam", Toast.LENGTH_SHORT).show();
-                                return false;
-                            }
-                            ((ViewGroup)txtPadi.getParent()).removeView(txtPadi);
-                            perahuKanan.addView(txtPadi);
+                            ((ViewGroup)txtKucingKecil.getParent()).removeView(txtKucingKecil);
+                            perahuKanan.addView(txtKucingKecil);
                         }
                         return true;
                 }
@@ -391,24 +333,64 @@ public class Level2Activity extends ActionBarActivity {
                 if (count == 0) {
                     Toast.makeText(getApplicationContext(), "Tidak bisa menyebrang tidak ada objek", Toast.LENGTH_SHORT).show();
                     return;
-                } else if (((ViewGroup) txtPetani.getParent()) != sisiPerahuSekarang) {
-                    Toast.makeText(getApplicationContext(), "Petani perlu ada di kapal", Toast.LENGTH_SHORT).show();
+                }
+
+                int anjingkiri = totalAnjingSeberangKiri, anjingkanan = totalAnjingSeberangKanan, kucingkiri = totalKucingSeberangKiri, kucingkanan = totalKucingSeberangKanan;
+                for (int i = 0; sisiPerahuSekarang.getChildCount() > i; i++) {
+                    TextView t = (TextView) sisiPerahuSekarang.getChildAt(i);
+                    if (letakPerahu.equals("kiri")) {
+                        if(t == txtAnjingBesar || t == txtAnjingSedang || t == txtAnjingKecil)
+                        {
+                            anjingkiri--;
+                            anjingkanan++;
+                        }
+                        else
+                        {
+                            kucingkiri--;
+                            kucingkanan++;
+                        }
+                    } else {
+                        if(t == txtAnjingBesar || t == txtAnjingSedang || t == txtAnjingKecil)
+                        {
+                            anjingkiri++;
+                            anjingkanan--;
+                        }
+                        else
+                        {
+                            kucingkiri++;
+                            kucingkanan--;
+                        }
+                    }
+
+                }
+                if((kucingkiri < anjingkiri && kucingkiri != 0) || (kucingkanan < anjingkanan && kucingkanan != 0))
+                {
+                    Toast.makeText(getApplicationContext(), "Anjing tidak boleh lebih banyak daripada kucing", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-
-                if (((ViewGroup) txtAyam.getParent()) == seberang &&
-                        ((ViewGroup) txtPadi.getParent()) == seberang) {
-                    Toast.makeText(getApplicationContext(), "Ayam dan Padi tidak bisa bersama", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (((ViewGroup) txtAyam.getParent()) == seberang &&
-                        ((ViewGroup) txtAnjing.getParent()) == seberang) {
-                    Toast.makeText(getApplicationContext(), "Ayam dan Anjing tidak bisa bersama", Toast.LENGTH_SHORT).show();
+                if (((ViewGroup) txtAnjingSedang.getParent()) == sisiPerahuSekarang &&
+                        ((ViewGroup) txtAnjingBesar.getParent()) == sisiPerahuSekarang)
+                {
+                    Toast.makeText(getApplicationContext(), "Anjing sedang tidak bisa bersama dengan sejenisnya", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (((ViewGroup) txtKambing.getParent()) == seberang &&
-                        ((ViewGroup) txtSayuran.getParent()) == seberang) {
-                    Toast.makeText(getApplicationContext(), "Kambing dan Sayuran tidak bisa bersama", Toast.LENGTH_SHORT).show();
+                else if (((ViewGroup) txtAnjingSedang.getParent()) == sisiPerahuSekarang &&
+                        ((ViewGroup) txtAnjingKecil.getParent()) == sisiPerahuSekarang)
+                {
+                    Toast.makeText(getApplicationContext(), "Anjing sedang tidak bisa bersama dengan sejenisnya", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (((ViewGroup) txtKucingSedang.getParent()) == sisiPerahuSekarang &&
+                        ((ViewGroup) txtKucingBesar.getParent()) == sisiPerahuSekarang)
+                {
+                    Toast.makeText(getApplicationContext(), "Kucing sedang tidak bisa bersama dengan sejenisnya", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (((ViewGroup) txtKucingSedang.getParent()) == sisiPerahuSekarang &&
+                        ((ViewGroup) txtKucingKecil.getParent()) == sisiPerahuSekarang)
+                {
+                    Toast.makeText(getApplicationContext(), "Kucing sedang tidak bisa bersama dengan sejenisnya", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -430,6 +412,17 @@ public class Level2Activity extends ActionBarActivity {
 
                         TextView t = (TextView) sisiPerahuSekarang.getChildAt(i);
                         t.startAnimation(animationobjects);
+
+                        if(t == txtAnjingBesar || t == txtAnjingSedang || t == txtAnjingKecil)
+                        {
+                            totalAnjingSeberangKiri--;
+                            totalAnjingSeberangKanan++;
+                        }
+                        else
+                        {
+                            totalKucingSeberangKiri--;
+                            totalKucingSeberangKanan++;
+                        }
                     }
 
                     new Handler().postDelayed(new Runnable() {
@@ -463,6 +456,17 @@ public class Level2Activity extends ActionBarActivity {
 
                         TextView t = (TextView) sisiPerahuSekarang.getChildAt(i);
                         t.startAnimation(animationobjects);
+
+                        if(t == txtAnjingBesar || t == txtAnjingSedang || t == txtAnjingKecil)
+                        {
+                            totalAnjingSeberangKiri++;
+                            totalAnjingSeberangKanan--;
+                        }
+                        else
+                        {
+                            totalKucingSeberangKiri++;
+                            totalKucingSeberangKanan--;
+                        }
                     }
 
                     new Handler().postDelayed(new Runnable() {
@@ -521,11 +525,11 @@ public class Level2Activity extends ActionBarActivity {
 
     public boolean checkPerahu()
     {
-        if(sisiPerahuSekarang.getChildCount() < 3)
+        if(sisiPerahuSekarang.getChildCount() < 2)
         {
             return true;
         }
-        Toast.makeText(getApplicationContext(), "Perahu tidak bisa diisi lebih dari 3 objek", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Perahu tidak bisa diisi lebih dari 2 objek", Toast.LENGTH_SHORT).show();
         return false;
     }
 
@@ -543,19 +547,19 @@ public class Level2Activity extends ActionBarActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 // Code that is executed when clicking YES
-                ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
-                ((ViewGroup)txtAyam.getParent()).removeView(txtAyam);
-                ((ViewGroup)txtKambing.getParent()).removeView(txtKambing);
-                ((ViewGroup)txtSayuran.getParent()).removeView(txtSayuran);
-                ((ViewGroup)txtAnjing.getParent()).removeView(txtAnjing);
-                ((ViewGroup)txtPadi.getParent()).removeView(txtPadi);
+                ((ViewGroup)txtAnjingBesar.getParent()).removeView(txtAnjingBesar);
+                ((ViewGroup)txtAnjingSedang.getParent()).removeView(txtAnjingSedang);
+                ((ViewGroup)txtAnjingKecil.getParent()).removeView(txtAnjingKecil);
+                ((ViewGroup)txtKucingBesar.getParent()).removeView(txtKucingBesar);
+                ((ViewGroup)txtKucingSedang.getParent()).removeView(txtKucingSedang);
+                ((ViewGroup)txtKucingKecil.getParent()).removeView(txtKucingKecil);
 
-                seberangKiri.addView(txtPetani);
-                seberangKiri.addView(txtAyam);
-                seberangKiri.addView(txtKambing);
-                seberangKiri.addView(txtSayuran);
-                seberangKiri.addView(txtAnjing);
-                seberangKiri.addView(txtPadi);
+                seberangKiri.addView(txtAnjingBesar);
+                seberangKiri.addView(txtAnjingSedang);
+                seberangKiri.addView(txtAnjingKecil);
+                seberangKiri.addView(txtKucingBesar);
+                seberangKiri.addView(txtKucingSedang);
+                seberangKiri.addView(txtKucingKecil);
 
                 sisiPerahuSekarang = perahuKiri;
                 letakPerahu = "kiri";
@@ -568,6 +572,11 @@ public class Level2Activity extends ActionBarActivity {
                 // reset step
                 step = 0;
                 txtStep.setText("0");
+
+                totalAnjingSeberangKiri = 3;
+                totalAnjingSeberangKanan = 0;
+                totalKucingSeberangKiri = 3;
+                totalKucingSeberangKanan = 0;
 
                 dialog.dismiss();
             }
@@ -605,19 +614,19 @@ public class Level2Activity extends ActionBarActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 // Code that is executed when clicking YES
-                ((ViewGroup)txtPetani.getParent()).removeView(txtPetani);
-                ((ViewGroup)txtAyam.getParent()).removeView(txtAyam);
-                ((ViewGroup)txtKambing.getParent()).removeView(txtKambing);
-                ((ViewGroup)txtSayuran.getParent()).removeView(txtSayuran);
-                ((ViewGroup)txtAnjing.getParent()).removeView(txtAnjing);
-                ((ViewGroup)txtPadi.getParent()).removeView(txtPadi);
+                ((ViewGroup)txtAnjingBesar.getParent()).removeView(txtAnjingBesar);
+                ((ViewGroup)txtAnjingSedang.getParent()).removeView(txtAnjingSedang);
+                ((ViewGroup)txtAnjingKecil.getParent()).removeView(txtAnjingKecil);
+                ((ViewGroup)txtKucingBesar.getParent()).removeView(txtKucingBesar);
+                ((ViewGroup)txtKucingSedang.getParent()).removeView(txtKucingSedang);
+                ((ViewGroup)txtKucingKecil.getParent()).removeView(txtKucingKecil);
 
-                seberangKiri.addView(txtPetani);
-                seberangKiri.addView(txtAyam);
-                seberangKiri.addView(txtKambing);
-                seberangKiri.addView(txtSayuran);
-                seberangKiri.addView(txtAnjing);
-                seberangKiri.addView(txtPadi);
+                seberangKiri.addView(txtAnjingBesar);
+                seberangKiri.addView(txtAnjingSedang);
+                seberangKiri.addView(txtAnjingKecil);
+                seberangKiri.addView(txtKucingBesar);
+                seberangKiri.addView(txtKucingSedang);
+                seberangKiri.addView(txtKucingKecil);
 
                 sisiPerahuSekarang = perahuKiri;
                 letakPerahu = "kiri";
@@ -630,6 +639,12 @@ public class Level2Activity extends ActionBarActivity {
                 // reset step
                 step = 0;
                 txtStep.setText("0");
+
+                totalAnjingSeberangKiri = 3;
+                totalAnjingSeberangKanan = 0;
+                totalKucingSeberangKiri = 3;
+                totalKucingSeberangKanan = 0;
+
 
                 dialog.dismiss();
             }
@@ -645,7 +660,7 @@ public class Level2Activity extends ActionBarActivity {
                 // Code that is executed when clicking NO
                 dialog.dismiss();
 
-                Intent intent = new Intent(Level2Activity.this, MenuActivity.class);
+                Intent intent = new Intent(Level3Activity.this, MenuActivity.class);
                 startActivity(intent);
             }
 

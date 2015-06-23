@@ -8,58 +8,71 @@
     android:background="#6e3defff">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Level 1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/btnLevel1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/backmenu1"
+        android:layout_toStartOf="@+id/imageView2"
+        android:layout_toLeftOf="@+id/imageView2" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Level 2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/btnLevel2"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/btnLevel1"
-        android:layout_toEndOf="@+id/btnLevel1" />
+        android:background="@drawable/backmenu2"
+        android:layout_toStartOf="@+id/imageView3"
+        android:layout_alignBottom="@+id/btnLevel3"
+        android:layout_toLeftOf="@+id/imageView3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Level 3"
-        android:id="@+id/btnlevel3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnLevel3"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/btnLevel2"
-        android:layout_toEndOf="@+id/btnLevel2" />
+        android:background="@drawable/backmenu3"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignEnd="@+id/imageView3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Level 4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/btnLevel4"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/btnlevel3"
-        android:layout_toEndOf="@+id/btnlevel3" />
+        android:layout_toRightOf="@+id/btnLevel3"
+        android:background="@drawable/backmenu4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Level 5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/btnLevel5"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/btnLevel4"
-        android:layout_toEndOf="@+id/btnLevel4" />
+        android:layout_toEndOf="@+id/btnLevel4"
+        android:background="@drawable/backmenu5"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Level 6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/btnLevel6"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/btnLevel5"
-        android:layout_toEndOf="@+id/btnLevel5" />
+        android:layout_toEndOf="@+id/btnLevel5"
+        android:background="@drawable/backmenu6"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
