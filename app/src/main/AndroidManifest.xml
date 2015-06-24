@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MenuActivity"
-            android:label="MenuActivity"
+            android:label="RiverCrossing"
             android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +32,8 @@
             android:label="Level3Activity"
             android:screenOrientation="landscape">
         </activity>
+
+        <service android:name="MusicService"  android:enabled="true"></service>
     </application>
 
 </manifest>

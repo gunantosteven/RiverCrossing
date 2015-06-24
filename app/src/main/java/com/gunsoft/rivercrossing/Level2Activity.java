@@ -3,10 +3,12 @@ package com.gunsoft.rivercrossing;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -27,6 +29,8 @@ public class Level2Activity extends ActionBarActivity {
     String letakPerahu = "kiri";
 
     int step = 0;
+
+    MediaPlayer mpLevel2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +64,7 @@ public class Level2Activity extends ActionBarActivity {
 
 
 
-        txtPetani = (TextView) findViewById(R.id.txtKucingBesar);
+        txtPetani = (TextView) findViewById(R.id.txtPetani);
         txtPetani.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -101,7 +105,7 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtAyam = (TextView) findViewById(R.id.txtKucingSedang);
+        txtAyam = (TextView) findViewById(R.id.txtKucing);
         txtAyam.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -214,7 +218,7 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtAnjing = (TextView) findViewById(R.id.txtKucingKecil);
+        txtAnjing = (TextView) findViewById(R.id.txtAnjing);
         txtAnjing.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -265,7 +269,7 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        txtSayuran = (TextView) findViewById(R.id.txtAnjingSedang);
+        txtSayuran = (TextView) findViewById(R.id.txtDaging);
         txtSayuran.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -367,7 +371,7 @@ public class Level2Activity extends ActionBarActivity {
             }
         });
 
-        btnReset.setOnClickListener(new View.OnClickListener(){
+        btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reset();
@@ -498,6 +502,22 @@ public class Level2Activity extends ActionBarActivity {
 
             }
         });
+
+        mpLevel2 = MediaPlayer.create(this, R.raw.bgm2);
+        mpLevel2.setLooping(true);
+        mpLevel2.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mpLevel2.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mpLevel2.start();
     }
 
     public boolean checkCondition(TextView object)

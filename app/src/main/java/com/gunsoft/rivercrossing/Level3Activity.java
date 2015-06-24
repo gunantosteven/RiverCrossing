@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -102,7 +103,7 @@ public class Level3Activity extends ActionBarActivity {
             }
         });
 
-        txtAnjingSedang = (TextView) findViewById(R.id.txtAnjingSedang);
+        txtAnjingSedang = (TextView) findViewById(R.id.txtDaging);
         txtAnjingSedang.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -185,7 +186,7 @@ public class Level3Activity extends ActionBarActivity {
             }
         });
 
-        txtKucingBesar = (TextView) findViewById(R.id.txtKucingBesar);
+        txtKucingBesar = (TextView) findViewById(R.id.txtPetani);
         txtKucingBesar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -226,7 +227,7 @@ public class Level3Activity extends ActionBarActivity {
             }
         });
 
-        txtKucingSedang = (TextView) findViewById(R.id.txtKucingSedang);
+        txtKucingSedang = (TextView) findViewById(R.id.txtKucing);
         txtKucingSedang.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -267,7 +268,7 @@ public class Level3Activity extends ActionBarActivity {
             }
         });
 
-        txtKucingKecil = (TextView) findViewById(R.id.txtKucingKecil);
+        txtKucingKecil = (TextView) findViewById(R.id.txtAnjing);
         txtKucingKecil.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -669,6 +670,15 @@ public class Level3Activity extends ActionBarActivity {
 
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            //preventing default implementation previous to android.os.Build.VERSION_CODES.ECLAIR
+            MusicService.getMp().start();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override

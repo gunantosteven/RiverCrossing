@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtKucingBesar"
+                android:id="@+id/txtPetani"
                 android:layout_alignParentBottom="true"
                 android:drawableLeft="@drawable/petani" />
 
@@ -73,8 +73,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:id="@+id/txtKucingSedang"
-                android:layout_below="@+id/txtKucingBesar"
+                android:id="@+id/txtKucing"
+                android:layout_below="@+id/txtPetani"
                 android:layout_alignParentBottom="true"
                 android:drawableLeft="@drawable/ayam"/>
 
@@ -82,8 +82,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:id="@+id/txtKucingKecil"
-                android:layout_below="@+id/txtKucingSedang"
+                android:id="@+id/txtAnjing"
+                android:layout_below="@+id/txtKucing"
                 android:layout_alignParentBottom="true"
                 android:drawableLeft="@drawable/anjing"/>
 
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/txtAnjingBesar"
-                android:layout_below="@+id/txtKucingKecil"
+                android:layout_below="@+id/txtAnjing"
                 android:layout_alignParentBottom="true"
                 android:drawableLeft="@drawable/kambing"/>
 
@@ -100,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:id="@+id/txtAnjingSedang"
+                android:id="@+id/txtDaging"
                 android:layout_below="@+id/txtAnjingBesar"
                 android:layout_alignParentBottom="true"
                 android:drawableLeft="@drawable/sayur"/>
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/txtPadi"
-                android:layout_below="@+id/txtAnjingSedang"
+                android:layout_below="@+id/txtDaging"
                 android:layout_alignParentBottom="true"
                 android:drawableLeft="@drawable/padi"/>
 
